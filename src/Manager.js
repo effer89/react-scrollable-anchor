@@ -80,14 +80,14 @@ class Manager {
   }
 
   goToSection = (id) => {
-    console.log('goToSection(' + id + ')')
     if(!id) return false
+    var that = this
     let element = this.anchors[id]
     if (element) {
       setTimeout(function(){
         jump(element, {
-          duration: this.config.scrollDuration,
-          offset: this.config.offset,
+          duration: that.config.scrollDuration,
+          offset: that.config.offset,
         })
       }, 1000)
     } else {
