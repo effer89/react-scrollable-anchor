@@ -80,12 +80,15 @@ class Manager {
   }
 
   goToSection = (id) => {
+    if(!id) return false
     let element = this.anchors[id]
     if (element) {
-      jump(element, {
-        duration: this.config.scrollDuration,
-        offset: this.config.offset,
-      })
+      setTimeout(function(){
+        jump(element, {
+          duration: this.config.scrollDuration,
+          offset: this.config.offset,
+        })
+      }, 1000)
     } else {
       // make sure that standard hash anchors don't break.
       // simply jump to them.
