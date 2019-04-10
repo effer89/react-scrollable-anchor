@@ -80,6 +80,7 @@ class Manager {
   }
 
   goToSection = (id) => {
+    console.log('goToSection(' + id + ')')
     if(!id) return false
     let element = this.anchors[id]
     if (element) {

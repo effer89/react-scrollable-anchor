@@ -3,6 +3,7 @@ export const getHash = () => {
 }
 
 export const updateHash = (hash, affectHistory) => {
+  console.log('updateHash(' + hash + ')')
   if(window.history.pushState){
     window.history.pushState(null, null, '#' + hash);
   }else{
